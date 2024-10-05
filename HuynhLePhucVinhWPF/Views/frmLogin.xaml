@@ -1,0 +1,19 @@
+﻿<Window x:Class="HuynhLePhucVinhWPF.frmLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HuynhLePhucVinhWPF"
+        mc:Ignorable="d"
+        Title="frmLogin" Height="450" Width="800">
+    <Grid>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="95,137,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="182,141,0,0"  VerticalAlignment="Top" Width="410" Height="30" Text="{Binding CurrentSystemAccount.AccountEmail}"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="80,236,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="tbPass" HorizontalAlignment="Left" Margin="182,236,0,0" VerticalAlignment="Top" Width="410" Height="34" Text="{Binding CurrentSystemAccount.AccountPassword}"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="297,339,0,0" VerticalAlignment="Top" Height="42" Width="103" Command="{Binding SignInCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="317,56,0,0" VerticalAlignment="Top" Height="45" Width="83" FontSize="24" RenderTransformOrigin="0.743,0.632"/>
+
+
+    </Grid>
+</Window>

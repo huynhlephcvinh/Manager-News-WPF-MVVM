@@ -1,0 +1,46 @@
+﻿<Page x:Class="HuynhLePhucVinhWPF.Views.Staff.TagPage3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HuynhLePhucVinhWPF.Views.Staff"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TagPage3">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Background="LightBlue" Orientation="Vertical" Width="300" HorizontalAlignment="Center">
+            <Label Foreground="Red" FontWeight="DemiBold" FontSize="20" Content="Manage Tag"/>
+            <Label>ID</Label>
+            <TextBox x:Name="ID" Text="{Binding CurrentTag.TagId}"  IsReadOnly="True"></TextBox>
+            <Label>Name</Label>
+            <TextBox  x:Name="Name" Text="{Binding CurrentTag.TagName}"  ></TextBox>
+            <Label>Note</Label>
+            <TextBox x:Name="Description" Height="30" Text="{Binding CurrentTag.Note}" ></TextBox>
+
+            <WrapPanel Orientation="Horizontal">
+                <Button Width="70" Height="25" Margin="10" Name="btImportFile" Command="{Binding ReloadCommand}" >ReLoad</Button>
+                <Button Width="55" Height="25" Margin="10" Name="btAdd" Command="{Binding AddTagCommand}" >Add</Button>
+                <Button Width="65" Height="25" Margin="10" x:Name="btUpdate" Command="{Binding UpdateTagCommand}">Update</Button>
+                <Button Width="79" Height="25" Margin="10" Name="btDelete" Command="{Binding DeteleTagCommand}">Delete</Button>
+            </WrapPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="500">
+            <ListView  ItemsSource="{Binding Tags}" SelectedItem="{Binding CurrentTag}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Path=TagId}"/>
+                        <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Path=TagName}"/>
+                        <GridViewColumn Header="Note" Width="280" DisplayMemberBinding="{Binding Path=Note}"/>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Admin\InsertOrUpdateAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\ManageAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\ReportStatisticNews.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Staff\InsertOrUpdateCategory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Staff\CategoryPage1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Staff\frmStaff.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\frmLogin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Staff\InsertOrUpdateNews.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Staff\InsertOrUpdateTag.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Staff\NewsArticlePage2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Staff\ProfilePage4.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Staff\TagPage3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Admin\InsertOrUpdateAccount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Admin\ManageAccount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Admin\ReportStatisticNews.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Staff\InsertOrUpdateCategory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Staff\CategoryPage1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Staff\frmStaff.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\frmLogin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Staff\InsertOrUpdateNews.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Staff\InsertOrUpdateTag.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Staff\NewsArticlePage2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Staff\ProfilePage4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Staff\TagPage3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

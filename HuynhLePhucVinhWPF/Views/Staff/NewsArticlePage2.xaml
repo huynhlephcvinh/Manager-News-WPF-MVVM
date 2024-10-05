@@ -1,0 +1,80 @@
+﻿<Page x:Class="HuynhLePhucVinhWPF.Views.Staff.NewsArticlePage2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HuynhLePhucVinhWPF.Views.Staff"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="NewsArticlePage2">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Background="LightBlue" Orientation="Vertical" Width="270" HorizontalAlignment="Center">
+            <Label Foreground="Red" FontWeight="DemiBold" FontSize="20" Content="Manage News"/>
+            <Label>Title</Label>
+            <TextBox  x:Name="Title" Text="{Binding CurrentNews.NewsTitle}"></TextBox>
+            <Label>Create Date</Label>
+            <DatePicker x:Name="CreateDay" SelectedDate="{Binding CurrentNews.CreatedDate}" />
+            <Label>Content</Label>
+            <TextBox Height="40" x:Name="Content" Text="{Binding CurrentNews.NewsContent}" />
+            <Label>Create By</Label>
+            <TextBox x:Name="CreateBy" Text="{Binding CurrentNews.CreatedBy.AccountName}"></TextBox>
+            <Label>Modified Date</Label>
+            <DatePicker x:Name="Modified" SelectedDate="{Binding CurrentNews.CreatedDate}" />
+            <Label>Tag</Label>
+            <ComboBox ItemsSource="{Binding AvailableTags}" DisplayMemberPath="TagName" SelectedItem="{Binding SelectedTag}" Width="100" HorizontalAlignment="Left"/>
+            <TextBox x:Name="TagChoose" Width="100" Text="{Binding TagToRemove.TagName}" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="73" Y="-20"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <WrapPanel Orientation="Horizontal">
+           
+                <Button Width="55" Height="25" Margin="10" Name="btAdd" Command="{Binding AddNewsCommand}" >Add</Button>
+                <Button Width="65" Height="25" Margin="10" x:Name="btUpdate" Command="{Binding UpdateNewsCommand}">Update</Button>
+                <Button Width="79" Height="25" Margin="10" Name="btDelete" Command="{Binding DeteleNewsCommand}">Delete</Button>
+                <Button Content="Add Tag" Width="55" Height="25" Margin="10" Command="{Binding AddTagCommand}" IsEnabled="{Binding SelectedTag}" />
+                <Button Content="Remove Tag" Width="75" Height="25" Margin="10" Command="{Binding RemoveTagCommand}" IsEnabled="{Binding TagToRemove}" />
+            </WrapPanel>
+        </StackPanel>
+
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Grid.Column="1" Width="630">
+
+                <ListView ItemsSource="{Binding NewsArticles}" SelectedItem="{Binding CurrentNews}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="10">
+                                <StackPanel>
+                                    <!-- Hiển thị tiêu đề bài viết -->
+                                    <TextBlock Text="{Binding NewsTitle}" FontWeight="Bold" FontSize="16"/>
+
+                                    <!-- Hiển thị nội dung bài viết -->
+                                    <TextBlock Text="{Binding NewsContent}" TextWrapping="Wrap" Margin="0,10,0,0"/>
+
+                                    <!-- Hiển thị danh mục bài viết -->
+                                    <TextBlock Text="{Binding Category.CategoryName}" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                                    <!-- Hiển thị tag bài viết -->
+                                    <TextBlock Text="Tags:" FontWeight="Bold" Margin="10"/>
+                                    <ListBox ItemsSource="{Binding Tags}" DisplayMemberPath="TagName" Margin="10" SelectedItem="{Binding DataContext.TagToRemove, RelativeSource={RelativeSource AncestorType=ListView}}"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+    </Grid>
+</Page>

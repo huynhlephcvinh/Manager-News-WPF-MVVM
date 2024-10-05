@@ -1,0 +1,28 @@
+﻿<Window x:Class="HuynhLePhucVinhWPF.Views.Staff.InsertOrUpdateNews"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HuynhLePhucVinhWPF.Views.Staff"
+        mc:Ignorable="d"
+        Title="InsertOrUpdateNews" Height="550" Width="800">
+    <Grid Margin="0,0,0,22">
+        <StackPanel Background="LightBlue" Orientation="Vertical" Width="750" HorizontalAlignment="Center" Margin="0,0,0,116">
+            <Label Foreground="Red" x:Name="titleLabel" FontWeight="DemiBold" FontSize="20" />
+            <Label>ID</Label>
+            <TextBox x:Name="ID" Text="{Binding CurrentNews.NewsArticleId}" IsReadOnly="True"></TextBox>
+            <Label>Title</Label>
+            <TextBox  x:Name="Title" Text="{Binding CurrentNews.NewsTitle}"></TextBox>
+            <Label>Content</Label>
+            <TextBox Height="40" x:Name="Content" Text="{Binding CurrentNews.NewsContent}" />
+            <Label>Category</Label>
+            <ComboBox x:Name="cbCategory" ItemsSource="{Binding Categories}" DisplayMemberPath="CategoryName" SelectedValuePath="CategoryId" SelectedValue="{Binding CurrentNews.CategoryId, Mode=TwoWay}"  Width="400" HorizontalAlignment="Left" />
+            <WrapPanel Orientation="Horizontal">
+
+                <Button Width="55" Height="25" Margin="10" Name="btOK" Command="{Binding OKNewsCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ></Button>
+                <Button Width="65" Height="25" Margin="10" x:Name="btUpdate" Command="{Binding UpdateNewsCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"></Button>
+                <Button Width="79" Height="25" Margin="10" Name="btDelete" Command="{Binding CloseNewsCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">Close</Button>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
